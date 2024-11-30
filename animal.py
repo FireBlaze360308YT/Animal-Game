@@ -28,14 +28,18 @@ while random_health > 0:
     decoy_animal = random.choice(animal_list)
     print(f"{animal_name} is currently fine")
     mixed_list = [item for pair in zip(animal_food[random_animal], animal_food[decoy_animal]) for item in pair]
-    chosen_food = input(f"What would you like to feed {animal_name}, choose from {mixed_list}?")
-    
-    if chosen_food in animal_food[random_animal]:
-        random_health += 10
-        print(f"{animal_name} enjoyed that. Their score is now {random_health}")
+    chosen_food = input(f"What would you like to feed {animal_name}, choose from {mixed_list}?\n")
+    chosen_food = chosen_food.lower().replace(" ","")
+    if chosen_food not in mixed_list:
+        print(f"Sorry {chosen_food} is not a valid food")
+        continue
     else:
-        random_health -= 10
-        print(f"{animal_name} didn't like that. Their score is now {random_health}")
+        if chosen_food in animal_food[random_animal]:
+            random_health += 10
+            print(f"{animal_name} enjoyed that. Their score is now {random_health}")
+        else:
+            random_health -= 10
+            print(f"{animal_name} didn't like that. Their score is now {random_health}")
 
 # health bar code
     sys.stdout.write("[%s]" % (" " * health_bar))
