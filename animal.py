@@ -18,15 +18,16 @@ animal_food = {"dog":["beef","chicken","rice"],
                "penguin":["kfc","subway","dominos","krill"],
                "ibex":["grass","flowers"],
                "bat":["beetles","beef","cereal"]}
-
+animal_gender = ["girl","boy"]
 health_bar = 100 # size of heath bar which is printed to console
 
 # start the game by randomly selecting an animal and a health score
 random_animal = random.choice(animal_list)
 random_health = random.randint(1,100)
+random_gender = random.choice(animal_gender)
 
 # tell the user what their animal is and ask to name the animal
-print(f"Your animal is a {random_animal}. It has a health score of {random_health}")
+print(f"Your animal is a {random_gender} {random_animal}. It has a health score of {random_health}")
 animal_name = input("Give your animal a name : ")
 
 # keeps asking the user to select a food and adjusts the health score and displays the health bar
