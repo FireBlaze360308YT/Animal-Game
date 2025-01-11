@@ -1,7 +1,6 @@
 # Import necessary packages
 import random as rm
 import time as tm
-import itertools as it
 import sys
 
 # Setup the game by storing animals in a tuple and their dietry habits in a dictionary of tuples
@@ -20,7 +19,7 @@ animal_food :dict[str, tuple[str]] = {"dog": ("beef", "chicken", "rice"),
                                       "bat": ("beetles", "beef", "cereal"),
                                       "seal": ("krills", "fish", "penguin")}
 animal_gender :tuple[str] = ("girl", "boy")
-HEALTH_BAR = 100 # Size of heath bar which is printed to console
+HEALTH_BAR :int = 100 # Size of heath bar which is printed to console
 animal_images :dict[str, str] = {
     "dog": "🐕",
     "cat": "🐈",
